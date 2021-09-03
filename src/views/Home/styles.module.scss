@@ -1,0 +1,21 @@
+@import "../../styles/variables.scss";
+
+.textoBanner{
+    color: $color1;
+    font-size: 30px;
+    line-height: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @media screen and (min-width: $xl) {
+        font-size: 45px;
+    line-height: 45px;
+    }
+
+    span{
+        font-weight: normal;
+        font-size: 30px;
+        display: block;
+    }
+}

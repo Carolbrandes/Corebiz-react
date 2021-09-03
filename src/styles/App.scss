@@ -1,0 +1,47 @@
+@import "./variables.scss";
+
+@font-face {
+    font-family: "Nunito";
+    src: url(../assets/fonts/Nunito-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Nunito";
+    src: url(../assets/fonts/Nunito-Bold.ttf);
+    font-weight: bold;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito";
+}
+
+.body{
+    overflow-x: hidden;
+}
+
+.container {
+    width: 95%;
+    margin-inline: auto;
+    
+    @media screen and (min-width: $md) {
+        width: 80%;
+    }
+}
+
+.displayNoneMobile{
+    display: none !important;
+
+    @media screen and (min-width: $xl) {
+       display: block !important;
+    }
+}
+
+.displayNoneDesktop{
+    display: block !important;
+
+    @media screen and (min-width: $xl) {
+       display: none !important;
+    }
+}

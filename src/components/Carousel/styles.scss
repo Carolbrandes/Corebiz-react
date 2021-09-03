@@ -1,0 +1,30 @@
+@import "../../styles/variables.scss";
+
+.slick-slider{
+    overflow-x: hidden;
+}
+
+.slick-dots{
+    bottom: 20px !important;
+
+
+    @media screen and (min-width: $xl) {
+        bottom: 50px !important;
+    }
+
+    .slick-active{
+        button{
+            &::before{
+                color: $color5 !important;
+                
+            }
+        }
+    }
+    button{
+        &::before{
+           color: $color7 !important;
+           opacity: 1 !important;
+           font-size: 15px !important;
+        }
+    }
+}

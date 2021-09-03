@@ -1,0 +1,146 @@
+@import "../../styles/variables.scss";
+@import "../../styles/keyframes.scss";
+
+.header{
+    background-color: $color1;
+    padding: 20px 0;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &Column{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        
+        @media screen and (min-width: $xl) {
+            width: 80%; 
+        }
+    }
+}
+
+.menuMobile{
+    @media screen and (min-width: $xl) {
+       display: none; 
+    }
+}
+
+.linksMenuMobile{
+    display: none;
+    opacity: 0;
+    background-color: $color2;
+    width: 100%;
+    padding: 40px 0 40px 0;
+    position: absolute;
+    left: -200px;
+    top: 80px;
+    flex-direction: column;
+    align-items: center;
+    
+    a{
+        display: block;
+        color: $color1;
+        text-decoration: none;
+        
+
+        &:not(:last-child){
+            margin-bottom: 30px;
+        }
+    }
+
+
+    @media screen and (min-width: $xl) {
+        display: none; 
+     } 
+}
+
+.active{
+    display: flex !important;
+    animation: slideIn forwards;
+    animation-duration: 2s;
+}
+
+.inactive{
+    display: none !important;
+}
+
+.buscar{
+    position: relative;
+    margin-top: 30px;
+    
+    @media screen and (min-width: $xl){
+        width: 60%;
+        margin-right: 40px;
+        margin-top: 0;
+    }
+
+    &::after{
+        content: "";
+        display: block;
+        width: 18px;
+        height: 18px;
+        background-image: url(../../assets/images/lupa.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    input{
+        width: 100%;
+        border: none;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $color6;
+
+        &::placeholder{
+           color: $color6;
+           font-size: 13px; 
+        }
+    }
+}
+
+.links{
+    display: flex;
+    align-items: center;
+}
+
+.minhaConta{
+    display: block;
+    text-decoration: none;
+    color: $color6;
+    padding-right: 40px;
+
+    &::before{
+        content: "";
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        background-image: url(../../assets/images/usuario.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-right: 5px;
+    }
+}
+
+.carrinho{
+    display: flex;
+
+    .quantidadeItensCarrinho{
+        margin-left: 5px;
+        padding: 2px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: $color5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 14px;
+        color: $color1;
+    }
+}
