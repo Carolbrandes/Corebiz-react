@@ -1,0 +1,102 @@
+@import "../../styles/variables.scss";
+
+@font-face {
+    font-family: Lato;
+    src: url(../../assets/fonts/Lato-Bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(../../assets/fonts/Lato-Regular.ttf);
+}
+
+.newsletter{
+    background-color: $color3;
+    padding: 24px 0 36px 0;
+}
+
+.newsletterWrapper{
+    
+    @media screen and (min-width: $md) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.titulo{
+    font-family: Lato;
+    font-size: 22px;
+    line-height: 22px;
+    padding-bottom: 16px;
+
+    @media screen and (min-width: $md){
+        text-align: center;
+    }
+}
+
+.inputsWrapper{
+    @media screen and (min-width: $md){
+        display: flex;
+    }
+}
+
+.input{
+    width: 90vw;
+
+    &:first-child{
+        margin-bottom:22px;
+    }
+
+    &:last-child{
+        margin-bottom: 7px;
+    }
+
+    @media screen and (min-width: $md) {
+        width: 280px;
+    
+        &:not(:first-child){
+            margin: 0 10px;
+        } 
+
+        &:first-child{
+            margin-bottom:0;
+        }
+    
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}
+
+.botao{
+    width: 90vw;
+
+    @media screen and (min-width: $md){
+        width: 140px;
+    }
+}
+
+.titulo2{
+    font-family: Lato;
+    color: $color2;
+    font-size: 14px;
+    text-align: center;  
+}
+
+.texto{
+    font-family: Lato;
+    color: $color2;
+    font-size: 12px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.botaoNovoEmail{
+    width: 90vw;
+
+    @media screen and (min-width: $md) {
+        width:328px;
+    }
+}

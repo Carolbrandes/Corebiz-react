@@ -14,12 +14,17 @@ export interface Produto {
 }
 
 export interface ProdutoCarrinho {
-    productId: number;
-    productName: string;
-    stars: number;
-    imageUrl: string;
-    listPrice: number | null;
-    price: number;
-    installments: Array<Parcela> | [];
-    quantidade: number;
-  }
+  productId: number;
+  productName: string;
+  stars: number;
+  imageUrl: string;
+  listPrice: number | null;
+  price: number;
+  installments: Array<Parcela> | [];
+  quantidade: number;
+}
+
+export interface DadosNewsLetter {
+  nome: string;
+  email: string;
+}

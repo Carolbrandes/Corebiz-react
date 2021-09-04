@@ -3,12 +3,17 @@ import logo from "../../assets/images/logo.svg";
 import carrinho from "../../assets/images/carrinho.svg";
 import menu from "../../assets/images/menu.svg";
 import { Link } from "react-router-dom";
-import { useState, useLayoutEffect, useEffect } from "react";
+import { useState, useLayoutEffect, useEffect, useContext } from "react";
+import { AppContext } from "../../Store";
+import {ProdutoCarrinho} from "../../interface"
 
 export const Header = () => {
+  const {listaCarrinho} = useContext(AppContext)
   const [menuMobile, setMenuMobile] = useState(false);
   const [size, setSize] = useState([0, 0]);
 
+  const totalItensCarrinho = (lista: Array<ProdutoCarrinho>) => lista.map(item => item.quantidade).reduce((acc, curr) => acc + curr)
+  
   useLayoutEffect(() => {
     function updateSize() {
       setSize([window.innerWidth, window.innerHeight]);
@@ -24,6 +29,10 @@ export const Header = () => {
       setMenuMobile(false);
     }
   }, [size]);
+
+  useEffect(() => {
+    totalItensCarrinho(listaCarrinho)
+  }, [listaCarrinho])
 
   return (
     <header className={styles.header}>
@@ -54,7 +63,7 @@ export const Header = () => {
 
               <Link className={styles.carrinho} to="/carrinho">
                 <img src={carrinho} alt="carrinho" />
-                <div className={styles.quantidadeItensCarrinho}>1</div>
+                <div className={styles.quantidadeItensCarrinho}>{totalItensCarrinho(listaCarrinho)}</div>
               </Link>
             </div>
           </div>

@@ -6,8 +6,9 @@ interface Props{
     funcao: React.MouseEventHandler<HTMLButtonElement>
     className?: string
     width?: string
+    height?: string
 }
 
 export const Button = (props: Props) => {
-    return <button style={{width: props.width}} onClick={props.funcao}  className={`${styles.botao} ${props.className}`}>{props.children}</button>
+    return <button style={{width: props.width, height: props.height}} onClick={props.funcao}  className={`${styles.botao} ${props.className}`}>{props.children}</button>
 }

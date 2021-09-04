@@ -6,15 +6,16 @@ import bannerMobile from "../../assets/images/banner-mobile.png";
 import { Produtos } from "../../components/Produtos";
 import { GET_PRODUCTS } from "../../api";
 import { useEffect, useState } from "react";
+import { FormNewsletter } from "../../components/FormNewsletter";
 
 export const Home = () => {
-  const [produtos, setProdutos] = useState([])
+  const [produtos, setProdutos] = useState([]);
 
   useEffect(() => {
-    const getProducts = async () => setProdutos(await GET_PRODUCTS())
-    getProducts()
-  }, [])
- 
+    const getProducts = async () => setProdutos(await GET_PRODUCTS());
+    getProducts();
+  }, []);
+
   return (
     <div>
       <Carousel
@@ -82,8 +83,9 @@ export const Home = () => {
           </div>
         </Banner>
       </Carousel>
-   
-   <Produtos titulo="Mais Vendidos" listaProdutos={produtos} />
+
+      <Produtos titulo="Mais Vendidos" listaProdutos={produtos} />
+      <FormNewsletter />
     </div>
   );
 };
