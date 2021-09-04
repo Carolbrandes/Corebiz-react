@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Produto} from "./interface"
+import {ProdutoCarrinho} from "./interface"
 
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
 }
 
 interface globalContext{
-    listaCarrinho: Array<Produto>
+    listaCarrinho: Array<ProdutoCarrinho>
     setListaCarrinho: Function
 }
 

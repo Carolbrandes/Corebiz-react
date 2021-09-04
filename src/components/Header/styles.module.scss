@@ -100,6 +100,10 @@
            color: $color6;
            font-size: 13px; 
         }
+
+        &:focus{
+            outline: none;
+        }
     }
 }
 

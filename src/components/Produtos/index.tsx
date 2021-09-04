@@ -16,6 +16,7 @@ interface Props {
 
 export const Produtos = (props: Props) => {
   const { listaCarrinho, setListaCarrinho } = useContext(AppContext);
+  
   const renderizaEstrelas = (numeroEstrelas: number): Array<ReactNode> => {
     const arrayEstrelas = [];
     for (let i = 1; i <= numeroEstrelas; i++) {
@@ -32,7 +33,14 @@ export const Produtos = (props: Props) => {
   };
 
   const comprar = (produto: Produto) => {
-    setListaCarrinho((lista: Array<any>) => [...lista, produto])
+      const produtoComprado = listaCarrinho.find(produtoLista => produtoLista.productId === produto.productId)
+
+      if(produtoComprado !== undefined){
+        produtoComprado.quantidade += 1
+        // setListaCarrinho((listaCarrinho: Array<any>) => [...listaCarrinho, produtoComprado])
+      }else{
+          setListaCarrinho((listaCarrinho: Array<any>) => [...listaCarrinho, {...produto, quantidade: 1}])
+      }
   };
 
   useEffect(() => {
@@ -75,8 +83,8 @@ export const Produtos = (props: Props) => {
         }}
       >
         {props.listaProdutos.length > 0 &&
-          props.listaProdutos.map((produto) => (
-            <div key={produto.productId} className={styles.produto}>
+          props.listaProdutos.map((produto, index) => (
+            <div key={`${produto.productId}${index}`} className={styles.produto}>
               <div
                 className={styles.imagemProduto}
                 style={{ backgroundImage: `url(${produto.imageUrl})` }}
