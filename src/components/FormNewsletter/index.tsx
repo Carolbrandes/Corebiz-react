@@ -30,18 +30,19 @@ export const FormNewsletter = () => {
     }
 
     if (isEmailValido(email) && isCampoPreenchido(nome)) {
-      try {
-        POST_USER({ name: nome, email }).then((resp) => {
+      POST_USER({ name: nome, email })
+        .then((resp) => {
           if (resp === 200) {
             setMensagemFinalizacao(true);
           }
+        })
+        .catch((error) => {
+          alert("Desculpe, não foi possível cadastrar seu e-mail.");
+        })
+        .finally(() => {
+          setEmail("");
+          setNome("");
         });
-      } catch (error) {
-        alert("Desculpe, não foi possível cadastrar seu e-mail.");
-      } finally {
-        setNome("");
-        setEmail("");
-      }
     }
   };
 
@@ -50,9 +51,7 @@ export const FormNewsletter = () => {
       <div className={`container ${styles.newsletterWrapper}`}>
         {mensagemFinalizacao ? (
           <div>
-            <h2 className="titulo2">
-              Seu e-mail foi cadastrado com sucesso!
-            </h2>
+            <h2 className="titulo2">Seu e-mail foi cadastrado com sucesso!</h2>
             <p className={styles.texto}>
               A partir de agora você receberá as novidades e ofertas exclusivas.
             </p>
