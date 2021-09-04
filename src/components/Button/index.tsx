@@ -5,7 +5,7 @@ interface Props{
     children: React.ReactNode;
     funcao: React.MouseEventHandler<HTMLButtonElement>
     className?: string
-    width: string
+    width?: string
 }
 
 export const Button = (props: Props) => {
