@@ -1,0 +1,116 @@
+@import "../../styles/variables.scss";
+
+.titulo{
+    color: $color2;
+    font-size: 20px;
+    margin-bottom: 30px;
+
+    &::after{
+        content: "";
+        display: block;
+        width: 65px;
+        height: 5px;
+        background-color: $color4;
+        margin-top: 5px;
+    }
+}
+
+.produto{
+    width: 180px !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s;
+
+    @media screen and (min-width: $xl) {
+        width: 200px !important;
+
+        &:hover{
+            background-color: $color8;
+            padding-bottom: 10px;
+
+            .comprar{
+                display: block;
+            }
+        }
+    }
+}
+
+
+.imagemProduto{
+    width: inherit;
+    height: 122px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    @media screen and (min-width: $md){
+        height: 200px;
+    }
+}
+
+.nome{
+    color: $color6;
+    padding-top: 6px;
+    font-size: 10px;
+    text-align: center;
+
+    @media screen and (min-width: $md){
+       font-size: 12px;
+    }
+}
+
+.estrelas{
+    display: flex;
+    padding: 10px 0;
+    
+    @media screen and (min-width: $md){
+       padding: 5px 0;
+    }
+}
+
+.precoAntigo{
+    text-decoration: line-through;
+    color: $color6;
+    font-size: 12px;
+    text-align: center;
+}
+
+.precoNovo, .preco{
+   font-size: 16px; 
+   color: $color2;
+   font-weight: bold;
+   text-align: center;
+
+   @media screen and (min-width: $md){
+    font-size: 18px;  
+   }
+}
+
+.preco{
+  margin-top: 15px;  
+}
+
+.parcelas{
+    color: $color6;
+    font-size: 11px;
+    text-align: center;
+}
+
+.comprar{
+    margin-top:10px;
+    width: 100% !important;
+
+    @media screen and (min-width: $xl) {
+        display: none;
+        transition: .3s;
+        width: 125px !important;
+    }
+}
+
+.tag{
+    position: absolute;
+    right: 0;
+}
+

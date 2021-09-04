@@ -3,8 +3,18 @@ import { Carousel } from "../../components/Carousel";
 import { Banner } from "../../components/Banner";
 import banner from "../../assets/images/banner.png";
 import bannerMobile from "../../assets/images/banner-mobile.png";
+import { Produtos } from "../../components/Produtos";
+import { GET_PRODUCTS } from "../../api";
+import { useEffect, useState } from "react";
 
 export const Home = () => {
+  const [produtos, setProdutos] = useState([])
+
+  useEffect(() => {
+    const getProducts = async () => setProdutos(await GET_PRODUCTS())
+    getProducts()
+  }, [])
+ 
   return (
     <div>
       <Carousel
@@ -72,6 +82,8 @@ export const Home = () => {
           </div>
         </Banner>
       </Carousel>
+   
+   <Produtos titulo="Mais Vendidos" listaProdutos={produtos} />
     </div>
   );
 };

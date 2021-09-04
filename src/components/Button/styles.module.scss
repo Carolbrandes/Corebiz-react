@@ -1,0 +1,16 @@
+@import "../../styles/variables.scss";
+
+.botao{
+    border: none;
+    background-color: $color2;
+    color: $color1;
+    font-size: 15px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    height: 36px;
+
+    @media screen and (min-width: $md){
+        height: 32px;
+        font-size: 12px;
+    }
+}

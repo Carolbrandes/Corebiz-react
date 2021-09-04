@@ -2,6 +2,7 @@
 
 .slick-slider{
     overflow-x: hidden;
+    overflow-y: visible;
 }
 
 .slick-dots{
@@ -28,3 +29,28 @@
         }
     }
 }
+
+.setasWrapper{
+    display: none;
+    @media screen and (min-width: $md) {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        top: -150px;  
+    }
+}
+
+.prevArrow{
+    position: relative;
+    left: -40px;
+}
+
+.sectionProdutos{
+    .slick-slider{
+        height: 350px;
+    }
+    .slick-dots{
+        bottom: 40px !important;
+    }
+}
+

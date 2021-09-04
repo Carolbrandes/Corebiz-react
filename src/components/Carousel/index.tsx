@@ -1,18 +1,38 @@
-
+import  { Component } from "react";
 import Slider from "react-slick";
-import "./styles.scss"
+import previous from "../../assets/images/prevArrow.svg";
+import next from "../../assets/images/nextArrow.svg";
+import "./styles.scss";
 
-interface Props {
-  children: React.ReactNode,
-  settings: object
-}
+export class Carousel extends Component<any> {
+  slider: any;
+  constructor(props: any) {
+    super(props);
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
+  }
+  next() {
+    this.slider.slickNext();
+  }
+  previous() {
+    this.slider.slickPrev();
+  }
 
-export  const Carousel = (props: Props) =>  {
+  render() {
     return (
       <>
-        <Slider {...props.settings}>
-         {props.children}
+        <Slider ref={(c) => (this.slider = c)} {...this.props.settings}>
+          {this.props.children}
         </Slider>
+
+        {this.props.arrows &&  <div className="setasWrapper">
+          <img className="prevArrow"  src={previous} alt="anterior"  onClick={this.previous} />
+            
+         
+          <img className="nextArrow" src={next} alt="próximo"  onClick={this.next} />
+           
+        </div>}
       </>
-    ); 
+    );
+  }
 }
