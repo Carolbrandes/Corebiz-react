@@ -11,8 +11,13 @@ export const Header = () => {
   const {listaCarrinho} = useContext(AppContext)
   const [menuMobile, setMenuMobile] = useState(false);
   const [size, setSize] = useState([0, 0]);
+  const [totalItens, setTotalItens] = useState(0)
 
-  const totalItensCarrinho = (lista: Array<ProdutoCarrinho>) => lista.map(item => item.quantidade).reduce((acc, curr) => acc + curr)
+  const totalItensCarrinho = (lista: Array<ProdutoCarrinho>) => {
+    if(lista.length > 0){
+     setTotalItens(lista.map(item => item.quantidade).reduce((acc, curr) => acc + curr))
+    }
+  }
   
   useLayoutEffect(() => {
     function updateSize() {
@@ -63,7 +68,7 @@ export const Header = () => {
 
               <Link className={styles.carrinho} to="/carrinho">
                 <img src={carrinho} alt="carrinho" />
-                <div className={styles.quantidadeItensCarrinho}>{totalItensCarrinho(listaCarrinho)}</div>
+                <div className={styles.quantidadeItensCarrinho}>{totalItens}</div>
               </Link>
             </div>
           </div>

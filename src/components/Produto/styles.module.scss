@@ -1,0 +1,160 @@
+@import "../../styles/variables.scss";
+
+.produto {
+    width: 180px !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+
+    @media screen and (min-width: $xl) {
+        width: 200px !important;
+
+        &:hover {
+            background-color: $color8;
+            padding-bottom: 10px;
+
+            .comprar {
+                display: block;
+            }
+        }
+    }
+}
+
+.produtoCarrinho {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (min-width: $md){
+        flex-direction: row;
+    }
+    
+    .imagemProduto {
+        margin-right: 20px;
+    }
+}
+
+.imagemProduto {
+    width: 132px;
+    height: 122px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    @media screen and (min-width: $md) {
+        height: 200px;
+        width: 216px;
+    }
+}
+
+.informacoesProduto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nome {
+    color: $color6;
+    padding-top: 6px;
+    font-size: 10px;
+    text-align: center;
+
+    @media screen and (min-width: $md) {
+        font-size: 12px;
+    }
+}
+
+.estrelas {
+    display: flex;
+    padding: 10px 0;
+
+    @media screen and (min-width: $md) {
+        padding: 5px 0;
+    }
+}
+
+.precoAntigo {
+    text-decoration: line-through;
+    color: $color6;
+    font-size: 12px;
+    text-align: center;
+}
+
+.precoNovo,
+.preco {
+    font-size: 16px;
+    color: $color2;
+    font-weight: bold;
+    text-align: center;
+
+    @media screen and (min-width: $md) {
+        font-size: 18px;
+    }
+}
+
+.preco {
+    margin-top: 15px;
+}
+
+.parcelas {
+    color: $color6;
+    font-size: 11px;
+    text-align: center;
+}
+
+.comprar {
+    margin-top: 10px;
+    width: 100% !important;
+
+    @media screen and (min-width: $xl) {
+        display: none;
+        transition: 0.3s;
+        width: 125px !important;
+    }
+}
+
+.tag {
+    position: absolute;
+    right: 0;
+}
+
+.quantidadeProduto {
+    margin: 10px 30px;
+    display: flex;
+    align-items: center;
+
+    button {
+        border: none;
+        background-color: $color2;
+        color: $color1;
+        display: block;
+        width: 25px;
+        height: 25px;
+        margin: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    span{
+        font-size: 20px;
+    }
+
+    @media screen and (min-width: $md) {
+        margin: 0 60px;
+    }
+}
+
+.informacoesCarrinho{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (min-width: $md) {
+        flex-direction: row;
+    }
+}

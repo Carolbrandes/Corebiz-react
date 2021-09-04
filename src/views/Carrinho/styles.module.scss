@@ -1,0 +1,17 @@
+@import "../../styles/variables.scss";
+
+.titulo{
+    margin-bottom: 30px;
+}
+
+.valorTotal{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 25px;
+    
+    @media screen and (min-width: $md) {
+        justify-content: flex-end;  
+    }
+
+}
