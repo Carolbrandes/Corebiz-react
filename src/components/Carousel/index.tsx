@@ -1,4 +1,4 @@
-import  { Component } from "react";
+import { Component } from "react";
 import Slider from "react-slick";
 import previous from "../../assets/images/prevArrow.svg";
 import next from "../../assets/images/nextArrow.svg";
@@ -25,13 +25,23 @@ export class Carousel extends Component<any> {
           {this.props.children}
         </Slider>
 
-        {this.props.arrows &&  <div className="setasWrapper">
-          <img className="prevArrow"  src={previous} alt="anterior"  onClick={this.previous} />
-            
-         
-          <img className="nextArrow" src={next} alt="próximo"  onClick={this.next} />
-           
-        </div>}
+        {this.props.arrows && (
+          <div className="setasWrapper">
+            <img
+              className="prevArrow"
+              src={previous}
+              alt="anterior"
+              onClick={this.previous}
+            />
+
+            <img
+              className="nextArrow"
+              src={next}
+              alt="próximo"
+              onClick={this.next}
+            />
+          </div>
+        )}
       </>
     );
   }

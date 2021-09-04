@@ -3,31 +3,24 @@ import logo from "../../assets/images/logo.svg";
 import carrinho from "../../assets/images/carrinho.svg";
 import menu from "../../assets/images/menu.svg";
 import { Link } from "react-router-dom";
-import { useState, useLayoutEffect, useEffect, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { AppContext } from "../../Store";
-import {ProdutoCarrinho} from "../../interface"
+import { ProdutoCarrinho } from "../../interface";
+import { useMedia } from "../../hooks/useMedia";
 
 export const Header = () => {
-  const {listaCarrinho} = useContext(AppContext)
+  const { listaCarrinho } = useContext(AppContext);
   const [menuMobile, setMenuMobile] = useState(false);
-  const [size, setSize] = useState([0, 0]);
-  const [totalItens, setTotalItens] = useState(0)
+  const [totalItens, setTotalItens] = useState(0);
+  const size = useMedia();
 
   const totalItensCarrinho = (lista: Array<ProdutoCarrinho>) => {
-    if(lista.length > 0){
-     setTotalItens(lista.map(item => item.quantidade).reduce((acc, curr) => acc + curr))
+    if (lista.length > 0) {
+      setTotalItens(
+        lista.map((item) => item.quantidade).reduce((acc, curr) => acc + curr)
+      );
     }
-  }
-  
-  useLayoutEffect(() => {
-    function updateSize() {
-      setSize([window.innerWidth, window.innerHeight]);
-    }
-    window.addEventListener("resize", updateSize);
-    updateSize();
-
-    return () => window.removeEventListener("resize", updateSize);
-  }, []);
+  };
 
   useEffect(() => {
     if (size[0] >= 1200) {
@@ -36,8 +29,8 @@ export const Header = () => {
   }, [size]);
 
   useEffect(() => {
-    totalItensCarrinho(listaCarrinho)
-  }, [listaCarrinho])
+    totalItensCarrinho(listaCarrinho);
+  }, [listaCarrinho]);
 
   return (
     <header className={styles.header}>
@@ -68,7 +61,9 @@ export const Header = () => {
 
               <Link className={styles.carrinho} to="/carrinho">
                 <img src={carrinho} alt="carrinho" />
-                <div className={styles.quantidadeItensCarrinho}>{totalItens}</div>
+                <div className={styles.quantidadeItensCarrinho}>
+                  {totalItens}
+                </div>
               </Link>
             </div>
           </div>

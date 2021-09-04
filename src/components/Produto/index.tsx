@@ -17,7 +17,7 @@ interface Props {
 export const ProdutoItem = (props: Props) => {
   const { listaCarrinho, setListaCarrinho } = useContext(AppContext);
   const [qtdProduto, setQtdProduto] = useState(props.produto.quantidade);
- 
+
   useEffect(() => {
     localStorage.setItem("carrinho", JSON.stringify(listaCarrinho));
   }, [listaCarrinho]);

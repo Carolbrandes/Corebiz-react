@@ -9,7 +9,6 @@ interface Props {
 }
 
 export const Produtos = (props: Props) => {
-  
   return (
     <section className="container section sectionProdutos">
       <h2 className={`titulo1 ${styles.titulo}`}>{props.titulo}</h2>

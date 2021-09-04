@@ -1,8 +1,8 @@
 import { Button } from "../Button";
 import styles from "./styles.module.scss";
-import email from "../../assets/images/email.svg"
-import fone from "../../assets/images/fone.svg"
-import logos from "../../assets/images/logos-footer.svg"
+import email from "../../assets/images/email.svg";
+import fone from "../../assets/images/fone.svg";
+import logos from "../../assets/images/logos-footer.svg";
 
 export const Footer = () => {
   return (
@@ -18,23 +18,33 @@ export const Footer = () => {
           </div>
 
           <div className={styles.buttonWrapper}>
-              <a href="#">
-                  <Button bg="#fff" color="#000"  height="38px" className={styles.botao}>
-                    <img className={styles.email} src={email} alt="email" />
-                    Entre em contato
-                  </Button>
-              </a>
+            <a href="#">
+              <Button
+                bg="#fff"
+                color="#000"
+                height="38px"
+                className={styles.botao}
+              >
+                <img className={styles.email} src={email} alt="email" />
+                Entre em contato
+              </Button>
+            </a>
 
-              <a href="#">
-                  <Button bg="#fff" color="#000"  height="38px" className={styles.botao}>
-                    <img className={styles.fone} src={fone} alt="fone" />
-                   Fale com o nosso consultor online
-                  </Button>
-              </a>
+            <a href="#">
+              <Button
+                bg="#fff"
+                color="#000"
+                height="38px"
+                className={styles.botao}
+              >
+                <img className={styles.fone} src={fone} alt="fone" />
+                Fale com o nosso consultor online
+              </Button>
+            </a>
           </div>
 
           <div className={styles.logoWrapper}>
-             <img src={logos} alt="Logo Corebiz e VTEX" /> 
+            <img src={logos} alt="Logo Corebiz e VTEX" />
           </div>
         </div>
       </div>
