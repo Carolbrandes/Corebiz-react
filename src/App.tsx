@@ -3,6 +3,7 @@ import "./styles/App.scss";
 import { Routes } from "./routes";
 import { Header } from "./components/Header";
 import Store from "./Store";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Store>
           <Header />
           <Routes />
+          <Footer />
         </Store>
       </BrowserRouter>
     </div>

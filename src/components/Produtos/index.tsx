@@ -49,7 +49,7 @@ export const Produtos = (props: Props) => {
 
   return (
     <section className="container section sectionProdutos">
-      <h2 className={styles.titulo}>{props.titulo}</h2>
+      <h2 className={`titulo1 ${styles.titulo}`}>{props.titulo}</h2>
 
       <Carousel
         arrows
@@ -127,7 +127,7 @@ export const Produtos = (props: Props) => {
 
               <Button
                 className={styles.comprar}
-                funcao={() => comprar(produto)}
+                onClick={() => comprar(produto)}
               >
                 Comprar
               </Button>

@@ -50,7 +50,7 @@ export const FormNewsletter = () => {
       <div className={`container ${styles.newsletterWrapper}`}>
         {mensagemFinalizacao ? (
           <div>
-            <h2 className={styles.titulo2}>
+            <h2 className="titulo2">
               Seu e-mail foi cadastrado com sucesso!
             </h2>
             <p className={styles.texto}>
@@ -59,7 +59,7 @@ export const FormNewsletter = () => {
             <Button
               height="48px"
               className={styles.botaoNovoEmail}
-              funcao={() => setMensagemFinalizacao(false)}
+              onClick={() => setMensagemFinalizacao(false)}
             >
               Cadastrar novo e-mail
             </Button>
@@ -110,7 +110,7 @@ export const FormNewsletter = () => {
               <Button
                 className={styles.botao}
                 height="48px"
-                funcao={registrarUsuario}
+                onClick={registrarUsuario}
               >
                 Eu quero!
               </Button>

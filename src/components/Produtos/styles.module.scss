@@ -1,18 +1,7 @@
 @import "../../styles/variables.scss";
 
 .titulo{
-    color: $color2;
-    font-size: 20px;
     margin-bottom: 30px;
-
-    &::after{
-        content: "";
-        display: block;
-        width: 65px;
-        height: 5px;
-        background-color: $color4;
-        margin-top: 5px;
-    }
 }
 
 .produto{

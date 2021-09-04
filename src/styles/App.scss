@@ -11,6 +11,17 @@
     font-weight: bold;
 }
 
+@font-face {
+    font-family: Lato;
+    src: url(../assets/fonts/Lato-Bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(../assets/fonts/Lato-Regular.ttf);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -48,4 +59,39 @@
 
 .section{
     padding: 25px 0 70px 0;
+}
+
+.titulo1{
+    color: $color2;
+    font-size: 20px;
+   
+    &::after{
+        content: "";
+        display: block;
+        width: 65px;
+        height: 5px;
+        background-color: $color4;
+        margin-top: 5px;
+    }
+}
+
+.titulo2{
+    font-family: Lato;
+    color: $color2;
+    font-size: 14px;
+    text-align: center;
+}
+
+.titulo3{
+    color: $color1;
+    font-size: 20px;
+
+    &::after{
+        content: "";
+        display: block;
+        width: 44px;
+        height: 5px;
+        background-color: $color1;
+        margin-top: 10px;
+    }
 }
